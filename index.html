@@ -1,0 +1,49 @@
+<!-- ================= TELA DO JOGO ================= -->
+<div class="container">
+  <h2 id="numero-enigma">ENIGMA - 01</h2>
+
+  <input
+    type="text"
+    id="resposta"
+    placeholder="Digite sua resposta..."
+    autocomplete="off"
+  >
+
+  <button id="botao">Enviar</button>
+  <button id="abrir-progressao">Progressão</button>
+
+  <p id="mensagem"></p>
+</div>
+
+<!-- ================= TELA DE PROGRESSÃO ================= -->
+<div id="tela-progressao" style="display:none;">
+  <h2>Progressão</h2>
+
+  <div id="lista-progressao"></div>
+
+  <button id="voltar-jogo-progressao">Voltar</button>
+</div>
+
+<!-- ================= PAINEL ADMIN (LISTA) ================= -->
+<div id="admin-panel" style="display:none;">
+  <h2>Painel do Criador</h2>
+
+  <button id="novo-enigma">Criar novo enigma</button>
+
+  <ul id="lista-enigmas"></ul>
+
+  <button id="voltar-jogo">Voltar ao jogo</button>
+</div>
+
+<!-- ================= EDITOR INDIVIDUAL ================= -->
+<div id="editor-enigma" style="display:none;">
+  <h2 id="editor-titulo"></h2>
+
+  <p>Resposta do enigma:</p>
+  <input type="text" id="editor-resposta">
+
+  <button id="salvar-enigma">Salvar</button>
+  <button id="apagar-enigma">Apagar este enigma</button>
+  <button id="voltar-admin">Voltar</button>
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
