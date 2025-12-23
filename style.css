@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:active {
+  background: #666;
+}
+
+#mensagem {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#admin {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #444;
+  background: #111;
+}
+
+#editor {
+  width: 100%;
+  background: #000;
+  color: #0f0;
+  border: none;
+  padding: 10px;
+  font-family: monospace;
+}
+
+
+
+#admin-panel {
+  width: 90%;
+  max-width: 500px;
+  background: #050505;
+  padding: 20px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+#admin-panel textarea {
+  width: 100%;
+  background: #000;
+  color: #0f0;
+  border: none;
+  padding: 10px;
+  font-family: monospace;
+  margin-bottom: 15px;
+}
+
+#admin-panel button {
+  margin-bottom: 10px;
+}
+#lista-enigmas {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-enigmas li {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+#lista-enigmas li:hover {
+  background: #111;
+}
+
+#editor-enigma input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+#apagar-enigma {
+  background: #400;
+  color: #fff;
+}
+
+#apagar-enigma:hover {
+  background: #700;
+}
+
+#barra-enigmas {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.enigma-item {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.enigma-item.ativo {
+  outline: 2px solid #fff;
+}
+
+.enigma-item.resolvido {
+  background: #0a0;
+}
+
+#tela-progressao {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+#lista-progressao {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.progressao-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.progressao-item.resolvido {
+  background: #0a0;
+}
+
+.progressao-item.ativo {
+  outline: 2px solid #fff;
+}
+/* ================= ESPAÇAMENTO GLOBAL ENTRE BOTÕES ================= */
+
+/* Container padrão de telas */
+.container,
+#tela-progressao,
+#admin-panel,
+#editor-enigma {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Espaço entre botões */
+.container button,
+#tela-progressao button,
+#admin-panel button,
+#editor-enigma button {
+  margin-top: 10px;
+}
+
+/* Espaço entre botões consecutivos (extra polimento) */
+.container button + button,
+#tela-progressao button + button,
+#admin-panel button + button,
+#editor-enigma button + button {
+  margin-top: 12px;
+}
