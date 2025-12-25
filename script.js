@@ -1,56 +1,48 @@
 const screens = document.querySelectorAll(".screen");
 
-const ADMIN_PASSWORD = "1234"; // 🔑 MUDE AQUI
+const ADMIN_PASSWORD = "1234";
 
 let enigmas = JSON.parse(localStorage.getItem("enigmas")) || [];
 
-// Troca de telas
-function goTo(id) {
-  screens.forEach(screen => screen.classList.remove("active"));
+// ================= TROCA DE TELAS =================
+function mostrarTela(id) {
+  screens.forEach(tela => tela.classList.remove("active"));
   document.getElementById(id).classList.add("active");
-
-  if (id === "progress") {
-    renderEnigmas();
-  }
 }
 
-// Login admin
-function loginAdmin() {
-  const input = document.getElementById("adminPassword").value;
-  const error = document.getElementById("adminError");
+function voltarJogo() {
+  mostrarTela("jogo");
+}
 
-  if (input === ADMIN_PASSWORD) {
-    error.textContent = "";
-    goTo("editor");
+function abrirProgressao() {
+  mostrarTela("progressao");
+  renderProgressao();
+}
+
+function abrirAdmin() {
+  mostrarTela("admin-panel");
+}
+
+// ================= ADMIN =================
+function entrarAdmin() {
+  const senha = document.getElementById("senha-admin").value;
+
+  if (senha === ADMIN_PASSWORD) {
+    alert("Acesso liberado!");
   } else {
-    error.textContent = "Senha incorreta.";
+    alert("Senha incorreta!");
   }
 }
 
-// Adicionar enigma
-function addEnigma() {
-  const title = document.getElementById("enigmaTitle").value;
-  const text = document.getElementById("enigmaText").value;
+// ================= PROGRESSÃO =================
+function renderProgressao() {
+  const lista = document.getElementById("lista-progressao");
+  lista.innerHTML = "";
 
-  if (!title || !text) return;
-
-  enigmas.push({ title, text });
-  localStorage.setItem("enigmas", JSON.stringify(enigmas));
-
-  document.getElementById("enigmaTitle").value = "";
-  document.getElementById("enigmaText").value = "";
-
-  alert("Enigma salvo!");
-}
-
-// Renderizar enigmas
-function renderEnigmas() {
-  const list = document.getElementById("enigmasList");
-  list.innerHTML = "";
-
-  enigmas.forEach((e, i) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<strong>${i + 1}. ${e.title}</strong><br>${e.text}`;
-    list.appendChild(li);
+  enigmas.forEach((_, i) => {
+    const item = document.createElement("div");
+    item.className = "progressao-item";
+    item.textContent = i + 1;
+    lista.appendChild(item);
   });
 }
